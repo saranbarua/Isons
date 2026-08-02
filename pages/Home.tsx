@@ -52,47 +52,47 @@ const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slides = [
     {
-      tag: "Industrial Automation",
-      title: "Automation Solutions for Reliable Production",
+      tag: "Lifting Equipment",
+      title: "Professional Lifting Solutions for Every Industry",
       subtitle:
-        "PLC, HMI, VFD, Servo and Control Panel integration with engineering-grade support.",
-      cta: "Explore Shop",
+        "Premium chain hoists, beam trolleys, wire ropes, slings and lifting equipment engineered for safe and reliable material handling.",
+      cta: "Shop Products",
+      link: "/shop",
+      bg: "bg-slate-950",
+      overlay:
+        "bg-gradient-to-r from-slate-950/90 via-slate-900/70 to-transparent",
+      img: images.slider1,
+      imgClass: "object-cover opacity-40",
+      text: "text-white",
+      btnVariant: "secondary" as const,
+    },
+    {
+      tag: "Rigging Equipment",
+      title: "Trusted Rigging Hardware Built for Heavy-Duty Performance",
+      subtitle:
+        "High-quality shackles, hooks, chains, clamps, turnbuckles and rigging accessories designed for maximum safety and long service life.",
+      cta: "Browse Categories",
       link: "/shop",
       bg: "bg-slate-900",
       overlay:
-        "bg-gradient-to-r from-slate-950/80 via-slate-900/55 to-transparent",
-      img: images.slider1,
-      imgClass: "object-cover opacity-35",
-      text: "text-white",
-      btnVariant: "secondary" as const,
-    },
-    {
-      tag: "Service & Maintenance",
-      title: "Fast Troubleshooting. Practical Fix. Minimal Downtime.",
-      subtitle:
-        "On-site support, preventive maintenance, repair and replacement for plant stability.",
-      cta: "Request Service",
-      link: "/shop",
-      bg: "bg-emerald-50",
-      overlay:
-        "bg-gradient-to-r from-slate-950/70 via-slate-900/45 to-transparent",
+        "bg-gradient-to-r from-slate-950/85 via-slate-900/60 to-transparent",
       img: images.slider2,
-      imgClass: "object-contain opacity-90 scale-110 drop-shadow-2xl",
+      imgClass: "object-cover opacity-45",
       text: "text-white",
       btnVariant: "secondary" as const,
     },
     {
-      tag: "Electrical & Panels",
-      title: "Control Panels & Power Distribution You Can Trust",
+      tag: "Industrial Supply",
+      title: "Your Complete Industrial Lifting & Material Handling Partner",
       subtitle:
-        "SDB, MCC, control panels—built with clean wiring standards and proper documentation.",
+        "From warehouses and construction sites to factories and shipyards—we deliver certified lifting, rigging and cargo handling solutions across Bangladesh.",
       cta: "Request a Quote",
       link: "/contact",
-      bg: "bg-indigo-50",
+      bg: "bg-slate-900",
       overlay:
-        "bg-gradient-to-r from-slate-950/70 via-slate-900/45 to-transparent",
+        "bg-gradient-to-r from-slate-950/90 via-slate-900/65 to-transparent",
       img: images.slider3,
-      imgClass: "object-contain opacity-90 scale-110 drop-shadow-2xl",
+      imgClass: "object-cover opacity-40",
       text: "text-white",
       btnVariant: "secondary" as const,
     },
