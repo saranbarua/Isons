@@ -41,6 +41,8 @@ import {
   Sun,
   Wind,
   GlassWaterIcon,
+  Truck,
+  Headphones,
 } from "lucide-react";
 import { SEO, Layout } from "../components/Layout";
 import { ProductCard, Button } from "../components/UI";
@@ -465,32 +467,33 @@ export const Home = () => {
           {[
             {
               icon: <ShieldCheck />,
-              label: "Genuine Components",
-              sub: "Certified & authentic industrial parts",
+              label: "Certified Quality",
+              sub: "Industrial-grade lifting & rigging equipment",
             },
             {
-              icon: <Wrench />,
-              label: "On-Site Support",
-              sub: "Troubleshooting & commissioning",
+              icon: <Package />,
+              label: "Wide Product Range",
+              sub: "Chain hoists, slings, shackles & accessories",
             },
             {
-              icon: <Settings />,
-              label: "Engineering Expertise",
-              sub: "PLC, HMI, VFD & panel solutions",
+              icon: <Truck />,
+              label: "Fast Nationwide Delivery",
+              sub: "Reliable supply across Bangladesh",
             },
             {
-              icon: <Clock />,
-              label: "Fast Response Time",
-              sub: "24–48h service availability",
+              icon: <Headphones />,
+              label: "Expert Support",
+              sub: "Professional product consultation & assistance",
             },
           ].map((item, i) => (
             <div
               key={i}
               className="flex items-start gap-4 group p-4 rounded-2xl hover:bg-slate-50 transition-all"
             >
-              <div className="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition-all shrink-0">
+              <div className="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center group-hover:bg-amber-500 group-hover:text-white transition-all shrink-0">
                 {item.icon}
               </div>
+
               <div>
                 <h4 className="font-black text-slate-900 leading-snug">
                   {item.label}
