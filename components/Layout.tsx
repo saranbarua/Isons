@@ -381,26 +381,6 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({
                               </Link>
                             ))}
                         </div>
-
-                        {/* Bottom promo strip */}
-                        <div className="mt-auto pt-5">
-                          <div className="rounded-2xl border border-slate-100 bg-gradient-to-r from-slate-50 to-white p-4 flex items-center justify-between">
-                            <div>
-                              <p className="text-xs font-semibold text-slate-900">
-                                Need help choosing?
-                              </p>
-                              <p className="text-[11px] text-slate-500">
-                                Use Search to find exact model quickly.
-                              </p>
-                            </div>
-                            <button
-                              onClick={() => setIsSearchOpen(true)}
-                              className="text-xs font-semibold text-emerald-600 hover:text-emerald-700"
-                            >
-                              Open Search →
-                            </button>
-                          </div>
-                        </div>
                       </div>
                     )}
                   </div>

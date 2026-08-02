@@ -43,6 +43,15 @@ import {
   GlassWaterIcon,
   Truck,
   Headphones,
+  Ship,
+  Warehouse,
+  Pickaxe,
+  ShipWheel,
+  HardHat,
+  Anchor,
+  Boxes,
+  Container,
+  Train,
 } from "lucide-react";
 import { SEO, Layout } from "../components/Layout";
 import { ProductCard, Button } from "../components/UI";
@@ -515,436 +524,106 @@ export const Home = () => {
             <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight">
               Industries We Serve
             </h2>
+
             <p className="mt-4 text-slate-600 leading-relaxed">
-              Our automation and electrical solutions are trusted across
-              multiple industries where uptime, safety, and process reliability
-              matter.
+              We supply certified lifting, rigging, and material handling
+              equipment for industries where safety, strength, and operational
+              efficiency are essential.
             </p>
           </div>
 
-          {/* Chips */}
+          {/* Industries */}
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
             {[
               {
-                icon: <Shirt className="text-emerald-700" />,
-                label: "Textile & Garments",
+                icon: <Factory className="text-amber-600" />,
+                label: "Manufacturing",
               },
               {
-                icon: <Factory className="text-indigo-700" />,
-                label: "Pharmaceutical",
+                icon: <Building2 className="text-blue-600" />,
+                label: "Construction",
               },
               {
-                icon: <Utensils className="text-amber-700" />,
-                label: "Food & Beverage",
+                icon: <Ship className="text-sky-600" />,
+                label: "Shipbuilding & Marine",
               },
               {
-                icon: <Zap className="text-emerald-700" />,
-                label: "Power & Utilities",
+                icon: <Warehouse className="text-indigo-600" />,
+                label: "Warehousing",
               },
               {
-                icon: <Package className="text-indigo-700" />,
-                label: "Packaging & Printing",
+                icon: <Truck className="text-emerald-600" />,
+                label: "Logistics",
               },
               {
-                icon: <Building className="text-amber-700" />,
-                label: "Steel & Metal",
+                icon: <ShipWheel className="text-orange-600" />,
+                label: "Heavy Engineering",
               },
               {
-                icon: <Cpu className="text-slate-800" />,
-                label: "Electronics & Assembly",
+                icon: <Pickaxe className="text-slate-700" />,
+                label: "Mining",
               },
               {
-                icon: <Printer className="text-slate-700" />,
-                label: "Pulp & Paper",
+                icon: <HardHat className="text-yellow-600" />,
+                label: "Infrastructure",
               },
               {
-                icon: <Fuel className="text-red-600" />,
-                label: "Oil & Gas",
+                icon: <Anchor className="text-cyan-700" />,
+                label: "Ports & Terminals",
               },
               {
-                icon: <Droplet className="text-blue-600" />,
-                label: "Water Treatment",
+                icon: <Package className="text-violet-600" />,
+                label: "Material Handling",
               },
               {
-                icon: <Leaf className="text-gray-700" />,
-                label: "Feed & Agro",
+                icon: <Boxes className="text-rose-600" />,
+                label: "Distribution Centers",
               },
               {
-                icon: <Droplet className="text-gray-700" />,
-                label: "Irrigation Pump Projects",
+                icon: <Container className="text-slate-700" />,
+                label: "Cargo Handling",
               },
               {
-                icon: <Sun className="text-gray-700" />,
-                label: "Solar Systems & Inverters",
+                icon: <Train className="text-red-600" />,
+                label: "Railway Projects",
               },
               {
-                icon: <Wind className="text-gray-700" />,
-                label: "HVAC Systems",
+                icon: <Factory className="text-emerald-700" />,
+                label: "Steel Industries",
               },
               {
-                icon: <GlassWaterIcon className="text-gray-700" />,
-                label: "Ceramics & Glass",
+                icon: <Building className="text-indigo-700" />,
+                label: "Industrial Plants",
               },
             ].map((item, idx) => (
               <div
                 key={idx}
-                className="group inline-flex items-center gap-3 px-5 py-5 rounded-full bg-slate-50 border border-slate-200 hover:bg-white hover:shadow-md transition-all cursor-default"
+                className="group inline-flex items-center gap-3 px-5 py-5 rounded-full bg-slate-50 border border-slate-200 hover:bg-white hover:shadow-md transition-all"
               >
-                <div className="w-8 h-8  rounded-full bg-white border border-slate-200 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <div className="w-8 h-8 rounded-full bg-white border border-slate-200 flex items-center justify-center group-hover:scale-110 transition-transform">
                   {item.icon}
                 </div>
-                <span className="text-sm  font-black text-slate-800">
+
+                <span className="text-sm font-black text-slate-800">
                   {item.label}
                 </span>
               </div>
             ))}
           </div>
 
-          {/* Bottom Note */}
+          {/* Bottom */}
           <div className="mt-10 rounded-3xl bg-slate-50 border border-slate-200 p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <p className="text-sm text-slate-600 max-w-2xl">
-              Don’t see your industry listed? Our team adapts solutions based on
-              process requirements, control architecture, and operational goals.
+              Looking for lifting or rigging solutions for your project? Our
+              experts help you select the right equipment based on your
+              application, load capacity, and safety requirements.
             </p>
+
             <Link to="/contact">
               <Button variant="outline" className="rounded-full px-6">
-                Discuss Your Industry
+                Get Expert Advice
               </Button>
             </Link>
-          </div>
-        </div>
-      </section>
-      {/* Solutions / Services */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
-            <div className="max-w-3xl">
-              <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight">
-                Solutions & Services
-              </h2>
-              <p className="mt-3 text-slate-600 leading-relaxed">
-                End-to-end industrial automation and electrical support—designed
-                for uptime, safety, and long-term reliability.
-              </p>
-            </div>
-
-            <div className="flex gap-3">
-              <Link to="/contact">
-                <Button className="rounded-full px-6">
-                  Ask a Question <ArrowRight className="ml-2" size={18} />
-                </Button>
-              </Link>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                icon: <Settings className="text-emerald-700" />,
-                title: "PLC Programming & Commissioning",
-                desc: "Program, test, and commission PLC systems with clean logic, safety interlocks and documentation.",
-                points: [
-                  "Siemens / Mitsubishi / Delta",
-                  "On-site commissioning",
-                  "I/O testing & FAT",
-                ],
-                to: "/services/plc",
-              },
-              {
-                icon: <Layers className="text-indigo-700" />,
-                title: "HMI / SCADA Integration",
-                desc: "Operator-friendly screens, alarms, reporting and secure access for reliable plant monitoring.",
-                points: [
-                  "HMI design & mapping",
-                  "Alarm strategy",
-                  "Data logging & reports",
-                ],
-                to: "/services/hmi-scada",
-              },
-              {
-                icon: <Activity className="text-amber-700" />,
-                title: "VFD / Inverter Setup & Tuning",
-                desc: "Drive setup, parameter tuning, motor protection and performance optimization for stable operation.",
-                points: [
-                  "Parameter tuning",
-                  "Motor protection",
-                  "Energy optimization",
-                ],
-                to: "/services/vfd",
-              },
-              {
-                icon: <Cpu className="text-slate-800" />,
-                title: "Servo & Motion Control",
-                desc: "Servo selection, tuning and motion synchronization for precise speed, position, and repeatability.",
-                points: [
-                  "Servo sizing",
-                  "Tuning & calibration",
-                  "Motion sequence",
-                ],
-                to: "/services/servo",
-              },
-              {
-                icon: <Factory className="text-emerald-700" />,
-                title: "Control Panels / SDB / MCC",
-                desc: "Panel design, build, wiring standards, labeling and handover documentation—done professionally.",
-                points: [
-                  "Panel design & build",
-                  "Wiring standards",
-                  "BOQ & drawings",
-                ],
-                to: "/services/panels",
-              },
-              {
-                icon: <Wrench className="text-indigo-700" />,
-                title: "Maintenance, Repair & AMC",
-                desc: "Preventive maintenance, troubleshooting, and long-term service contracts to reduce downtime.",
-                points: [
-                  "Preventive maintenance",
-                  "Troubleshooting",
-                  "AMC support",
-                ],
-                to: "/services/amc",
-              },
-            ].map((s, idx) => (
-              <div
-                key={idx}
-                className="group bg-white border border-slate-200 rounded-3xl p-7 shadow-xl shadow-slate-200/40 hover:shadow-2xl hover:shadow-slate-200/60 transition-all"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-slate-50 border border-slate-200 flex items-center justify-center group-hover:scale-110 transition-transform">
-                    {s.icon}
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-lg font-black text-slate-900 leading-snug">
-                      {s.title}
-                    </h3>
-                    <p className="mt-2 text-sm text-slate-600 leading-relaxed">
-                      {s.desc}
-                    </p>
-                  </div>
-                </div>
-
-                <ul className="mt-5 space-y-2">
-                  {s.points.map((p) => (
-                    <li key={p} className="flex gap-2 text-sm text-slate-700">
-                      <FileCheck2
-                        className="mt-0.5 text-emerald-600"
-                        size={16}
-                      />
-                      <span>{p}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 bg-slate-50 border-y border-slate-100">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
-            <div className="max-w-3xl">
-              <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight">
-                Featured Projects & Case Studies
-              </h2>
-              <p className="mt-4 text-slate-600 leading-relaxed">
-                A few examples of how we deliver practical automation and
-                electrical solutions—focused on stability, uptime, and
-                maintainability.
-              </p>
-            </div>
-
-            <Link to="/projects">
-              <Button variant="outline" className="rounded-full px-6">
-                View All Projects <ArrowRight className="ml-2" size={18} />
-              </Button>
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              {
-                title: "PLC + HMI Upgrade for Production Line",
-                industry: "Textile & Garments",
-                scope: [
-                  "PLC program rewrite",
-                  "HMI screens & alarms",
-                  "I/O testing & commissioning",
-                ],
-                resultTitle: "Outcome",
-                result:
-                  "Improved operational stability and reduced frequent stoppages with clear alarm diagnostics.",
-                meta: [
-                  {
-                    icon: <Building2 className="text-slate-700" size={18} />,
-                    label: "Dhaka, BD",
-                  },
-                  {
-                    icon: (
-                      <ShieldCheck className="text-emerald-700" size={18} />
-                    ),
-                    label: "Documentation Provided",
-                  },
-                ],
-                highlight: {
-                  icon: <TrendingUp className="text-amber-700" size={18} />,
-                  text: "Downtime reduced (qualitative)",
-                },
-                to: "/projects/plc-hmi-upgrade",
-              },
-              {
-                title: "VFD Tuning & Motor Protection Setup",
-                industry: "Steel & Metal",
-                scope: [
-                  "Drive parameter tuning",
-                  "Overload protection",
-                  "Speed stability improvement",
-                ],
-                resultTitle: "Outcome",
-                result:
-                  "Smoother speed control and better motor safety with optimized parameters for load conditions.",
-                meta: [
-                  {
-                    icon: <Building2 className="text-slate-700" size={18} />,
-                    label: "Narayanganj, BD",
-                  },
-                  {
-                    icon: (
-                      <ShieldCheck className="text-emerald-700" size={18} />
-                    ),
-                    label: "Genuine Parts",
-                  },
-                ],
-                highlight: {
-                  icon: <TrendingUp className="text-amber-700" size={18} />,
-                  text: "Performance optimized",
-                },
-                to: "/projects/vfd-tuning",
-              },
-              {
-                title: "Control Panel Build + Site Commissioning",
-                industry: "Food & Beverage",
-                scope: [
-                  "Panel design & wiring",
-                  "Labeling & standards",
-                  "On-site commissioning",
-                ],
-                resultTitle: "Outcome",
-                result:
-                  "Clean panel layout, easier troubleshooting, and reliable operation with standard wiring practice.",
-                meta: [
-                  {
-                    icon: <Building2 className="text-slate-700" size={18} />,
-                    label: "Chattogram, BD",
-                  },
-                  {
-                    icon: (
-                      <ShieldCheck className="text-emerald-700" size={18} />
-                    ),
-                    label: "After-Sales Support",
-                  },
-                ],
-                highlight: {
-                  icon: <TrendingUp className="text-amber-700" size={18} />,
-                  text: "Maintainability improved",
-                },
-                to: "/projects/panel-commissioning",
-              },
-            ].map((p, idx) => (
-              <div
-                key={idx}
-                className="bg-white border border-slate-200 rounded-3xl p-7 shadow-xl shadow-slate-200/40 hover:shadow-2xl hover:shadow-slate-200/60 transition-all group"
-              >
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <p className="text-[11px] font-black uppercase tracking-widest text-emerald-700">
-                      {p.industry}
-                    </p>
-                    <h3 className="mt-2 text-xl font-black text-slate-900 leading-snug">
-                      {p.title}
-                    </h3>
-                  </div>
-
-                  <Link
-                    to={p.to}
-                    className="w-11 h-11 rounded-2xl bg-slate-50 border border-slate-200 flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition-all"
-                    aria-label="Open case study"
-                  >
-                    <ArrowUpRight size={18} />
-                  </Link>
-                </div>
-
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {p.meta.map((m, i) => (
-                    <span
-                      key={i}
-                      className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-slate-50 border border-slate-200 text-xs font-bold text-slate-700"
-                    >
-                      {m.icon} {m.label}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="mt-6">
-                  <h4 className="text-sm font-black text-slate-900 mb-3">
-                    Scope
-                  </h4>
-                  <ul className="space-y-2">
-                    {p.scope.map((s) => (
-                      <li key={s} className="text-sm text-slate-600 flex gap-2">
-                        <span className="mt-2 w-1.5 h-1.5 rounded-full bg-emerald-600 shrink-0" />
-                        <span className="leading-relaxed">{s}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="mt-6 p-5 rounded-2xl bg-slate-50 border border-slate-200">
-                  <div className="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-slate-500">
-                    {p.highlight.icon}
-                    <span>{p.highlight.text}</span>
-                  </div>
-                  <h4 className="mt-3 text-sm font-black text-slate-900">
-                    {p.resultTitle}
-                  </h4>
-                  <p className="mt-1 text-sm text-slate-600 leading-relaxed">
-                    {p.result}
-                  </p>
-                </div>
-
-                <div className="mt-6 flex items-center justify-between">
-                  <span className="text-[11px] font-black uppercase tracking-widest text-slate-400">
-                    Case Study
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Bottom CTA */}
-          <div className="mt-12 rounded-3xl bg-white border border-slate-200 p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-            <div className="max-w-2xl">
-              <h4 className="text-lg font-black text-slate-900">
-                Want similar results in your plant?
-              </h4>
-              <p className="mt-2 text-sm text-slate-600 leading-relaxed">
-                Share your requirements and current setup. We’ll suggest a
-                practical solution with scope, timeline, and budget clarity.
-              </p>
-            </div>
-            <div className="flex gap-3">
-              <Link to="/contact">
-                <Button className="rounded-full px-6">
-                  Discuss Your Project
-                </Button>
-              </Link>
-              <Link to="/contact">
-                <Button variant="outline" className="rounded-full px-6">
-                  Request BOQ
-                </Button>
-              </Link>
-            </div>
           </div>
         </div>
       </section>
@@ -1040,128 +719,6 @@ export const Home = () => {
             >
               Talk to Sales
             </Button> */}
-          </div>
-        </div>
-      </section>
-
-      {/* How We Work */}
-      <section className="py-20 bg-white border-t border-slate-100">
-        <div className="max-w-7xl mx-auto px-4">
-          {/* Section Header */}
-          <div className="max-w-3xl mb-14">
-            <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight">
-              How We Work
-            </h2>
-            <p className="mt-4 text-slate-600 leading-relaxed">
-              A structured, engineering-driven process to ensure clarity,
-              reliability, and long-term performance.
-            </p>
-          </div>
-
-          {/* Steps */}
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
-            {/* Step 1 */}
-            <div className="relative bg-slate-50 border border-slate-200 rounded-3xl p-7">
-              <span className="absolute -top-4 -left-4 w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-black">
-                01
-              </span>
-
-              <div className="w-12 h-12 rounded-2xl bg-white border border-slate-200 flex items-center justify-center mb-5">
-                <ClipboardList className="text-emerald-600" />
-              </div>
-
-              <h3 className="font-black text-slate-900 mb-2">
-                Requirement & Site Visit
-              </h3>
-              <p className="text-sm text-slate-600 leading-relaxed">
-                We understand your process, machine condition, control
-                requirements, and operational challenges through discussion or
-                on-site inspection.
-              </p>
-            </div>
-
-            {/* Step 2 */}
-            <div className="relative bg-slate-50 border border-slate-200 rounded-3xl p-7">
-              <span className="absolute -top-4 -left-4 w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-black">
-                02
-              </span>
-
-              <div className="w-12 h-12 rounded-2xl bg-white border border-slate-200 flex items-center justify-center mb-5">
-                <FileText className="text-indigo-600" />
-              </div>
-
-              <h3 className="font-black text-slate-900 mb-2">Proposal & BOQ</h3>
-              <p className="text-sm text-slate-600 leading-relaxed">
-                We prepare a clear technical proposal including solution
-                approach, component list, timeline, and cost breakdown.
-              </p>
-            </div>
-
-            {/* Step 3 */}
-            <div className="relative bg-slate-50 border border-slate-200 rounded-3xl p-7">
-              <span className="absolute -top-4 -left-4 w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-black">
-                03
-              </span>
-
-              <div className="w-12 h-12 rounded-2xl bg-white border border-slate-200 flex items-center justify-center mb-5">
-                <Cog className="text-amber-600" />
-              </div>
-
-              <h3 className="font-black text-slate-900 mb-2">
-                Installation & Commissioning
-              </h3>
-              <p className="text-sm text-slate-600 leading-relaxed">
-                Panel installation, wiring, PLC/HMI programming, testing, and
-                commissioning are completed following safety and engineering
-                standards.
-              </p>
-            </div>
-
-            {/* Step 4 */}
-            <div className="relative bg-slate-50 border border-slate-200 rounded-3xl p-7">
-              <span className="absolute -top-4 -left-4 w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-black">
-                04
-              </span>
-
-              <div className="w-12 h-12 rounded-2xl bg-white border border-slate-200 flex items-center justify-center mb-5">
-                <CheckCircle2 className="text-emerald-600" />
-              </div>
-
-              <h3 className="font-black text-slate-900 mb-2">
-                Handover & Support
-              </h3>
-              <p className="text-sm text-slate-600 leading-relaxed">
-                System handover with documentation, basic training, and ongoing
-                support for troubleshooting, upgrades, and AMC.
-              </p>
-            </div>
-          </div>
-
-          {/* Bottom CTA */}
-          <div className="mt-14 flex flex-col md:flex-row md:items-center md:justify-between gap-6 bg-slate-900 rounded-3xl p-8">
-            <div className="max-w-2xl">
-              <h4 className="text-xl font-black text-white">
-                Looking for a reliable automation partner?
-              </h4>
-              <p className="mt-2 text-slate-300">
-                Start with a discussion. We’ll guide you through the right
-                solution—step by step.
-              </p>
-            </div>
-
-            <div className="flex gap-3">
-              <Link to="/contact">
-                <Button className="rounded-full px-6">Book Site Visit</Button>
-              </Link>
-              <Link to="/contact">
-                <Button
-                  variant="outline"
-                  className="rounded-full px-6 border-white/40 text-white hover:bg-white/10"
-                >
-                  Request Proposal
-                </Button>
-              </Link>
-            </div>
           </div>
         </div>
       </section>
