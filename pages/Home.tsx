@@ -119,14 +119,11 @@ const Hero = () => {
             alt=""
             className={`absolute inset-0 object-cover ${slide.imgClass}`}
           />
-
           <div className={`absolute inset-0 ${slide.overlay}`} />
-
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/75 via-slate-900/45 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/35 via-slate-900/10 to-transparent" />{" "}
           {slide.text === "text-white" && (
             <div className="absolute inset-0 bg-gradient-to-r from-slate-900/75 via-slate-900/45 to-transparent" />
           )}
-
           <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-12">
             <div
               className={`max-w-2xl space-y-3 sm:space-y-4 md:space-y-6 ${slide.text}`}
