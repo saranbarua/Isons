@@ -58,6 +58,8 @@ import { ProductCard, Button } from "../components/UI";
 import { dataService } from "../services/dataService";
 import { Product, Category, Brand, Testimonial } from "../types";
 import { images } from "@/public/image/Images";
+import IndustriesWeServe from "./Home/IndustriesweServe";
+import { AllFiles } from "./Home/AllFile";
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -517,116 +519,7 @@ export const Home = () => {
       </div>
 
       {/* Industries We Serve */}
-      <section className="py-16 bg-white border-t border-slate-100">
-        <div className="max-w-7xl mx-auto px-4">
-          {/* Header */}
-          <div className="max-w-3xl mb-10">
-            <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight">
-              Industries We Serve
-            </h2>
-
-            <p className="mt-4 text-slate-600 leading-relaxed">
-              We supply certified lifting, rigging, and material handling
-              equipment for industries where safety, strength, and operational
-              efficiency are essential.
-            </p>
-          </div>
-
-          {/* Industries */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-            {[
-              {
-                icon: <Factory className="text-amber-600" />,
-                label: "Manufacturing",
-              },
-              {
-                icon: <Building2 className="text-blue-600" />,
-                label: "Construction",
-              },
-              {
-                icon: <Ship className="text-sky-600" />,
-                label: "Shipbuilding & Marine",
-              },
-              {
-                icon: <Warehouse className="text-indigo-600" />,
-                label: "Warehousing",
-              },
-              {
-                icon: <Truck className="text-emerald-600" />,
-                label: "Logistics",
-              },
-              {
-                icon: <ShipWheel className="text-orange-600" />,
-                label: "Heavy Engineering",
-              },
-              {
-                icon: <Pickaxe className="text-slate-700" />,
-                label: "Mining",
-              },
-              {
-                icon: <HardHat className="text-yellow-600" />,
-                label: "Infrastructure",
-              },
-              {
-                icon: <Anchor className="text-cyan-700" />,
-                label: "Ports & Terminals",
-              },
-              {
-                icon: <Package className="text-violet-600" />,
-                label: "Material Handling",
-              },
-              {
-                icon: <Boxes className="text-rose-600" />,
-                label: "Distribution Centers",
-              },
-              {
-                icon: <Container className="text-slate-700" />,
-                label: "Cargo Handling",
-              },
-              {
-                icon: <Train className="text-red-600" />,
-                label: "Railway Projects",
-              },
-              {
-                icon: <Factory className="text-emerald-700" />,
-                label: "Steel Industries",
-              },
-              {
-                icon: <Building className="text-indigo-700" />,
-                label: "Industrial Plants",
-              },
-            ].map((item, idx) => (
-              <div
-                key={idx}
-                className="group inline-flex items-center gap-3 px-5 py-5 rounded-full bg-slate-50 border border-slate-200 hover:bg-white hover:shadow-md transition-all"
-              >
-                <div className="w-8 h-8 rounded-full bg-white border border-slate-200 flex items-center justify-center group-hover:scale-110 transition-transform">
-                  {item.icon}
-                </div>
-
-                <span className="text-sm font-black text-slate-800">
-                  {item.label}
-                </span>
-              </div>
-            ))}
-          </div>
-
-          {/* Bottom */}
-          <div className="mt-10 rounded-3xl bg-slate-50 border border-slate-200 p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-            <p className="text-sm text-slate-600 max-w-2xl">
-              Looking for lifting or rigging solutions for your project? Our
-              experts help you select the right equipment based on your
-              application, load capacity, and safety requirements.
-            </p>
-
-            <Link to="/contact">
-              <Button variant="outline" className="rounded-full px-6">
-                Get Expert Advice
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
+      <IndustriesWeServe />
 
       {/* Category Grid */}
       <section className="bg-slate-50 py-16">
@@ -658,6 +551,7 @@ export const Home = () => {
           </div>
         </div>
       </section>
+      <AllFiles />
 
       {/* Hot Deals */}
       <section className="py-8">
@@ -719,25 +613,6 @@ export const Home = () => {
             >
               Talk to Sales
             </Button> */}
-          </div>
-        </div>
-      </section>
-
-      {/* Popular Brands */}
-      <section className="py-16 bg-white border-y border-slate-100">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-center font-bold text-slate-400 uppercase tracking-[0.2em] text-xs mb-10">
-            Official Authorized Partners
-          </h2>
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-50 hover:opacity-100 transition-opacity">
-            {brands.map((brand) => (
-              <img
-                key={brand.id}
-                src={brand.logo}
-                alt={brand.name}
-                className="h-10 md:h-12 grayscale hover:grayscale-0 transition-all cursor-pointer"
-              />
-            ))}
           </div>
         </div>
       </section>
