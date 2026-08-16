@@ -747,8 +747,8 @@ export const Home = () => {
   return (
     <Layout>
       <SEO
-        title="Home"
-        description="Welcome to tse - Bangladesh's best tech shop for components and laptops."
+        title="Industrial Lifting & Rigging Equipment | Chain Hoists, Slings & Rigging Hardware in Bangladesh"
+        description="Bangladesh's trusted supplier of certified lifting and rigging equipment — chain hoists, beam trolleys, wire ropes, slings, shackles and industrial hardware. Nationwide delivery, expert support, and custom procurement for factories, warehouses and shipyards."
       />
 
       <Hero />
