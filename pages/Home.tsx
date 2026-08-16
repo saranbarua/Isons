@@ -423,7 +423,287 @@ const TestimonialCarousel = ({
     </div>
   );
 };
+const statsData = [
+  {
+    icon: <HardHat size={22} />,
+    end: 15,
+    suffix: "+",
+    label: "Years of Industry Experience",
+  },
+  {
+    icon: <Boxes size={22} />,
+    end: 1000,
+    suffix: "+",
+    label: "Products Delivered",
+  },
+  {
+    icon: <Building2 size={22} />,
+    end: 500,
+    suffix: "+",
+    label: "Businesses Served",
+  },
+  {
+    icon: <Truck size={22} />,
+    end: 98,
+    suffix: "%",
+    label: "On-Time Delivery Rate",
+  },
+];
 
+const StatItem = ({
+  stat,
+  visible,
+  index,
+}: {
+  stat: (typeof statsData)[0];
+  visible: boolean;
+  index: number;
+}) => {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!visible) return;
+    let raf: number;
+    let start: number | null = null;
+    const duration = 1600 + index * 150;
+    const step = (ts: number) => {
+      if (start === null) start = ts;
+      const p = Math.min((ts - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - p, 3);
+      setCount(Math.floor(eased * stat.end));
+      if (p < 1) raf = requestAnimationFrame(step);
+    };
+    raf = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(raf);
+  }, [visible]);
+
+  return (
+    <div
+      className="relative flex flex-col items-center text-center transition-all duration-700"
+      style={{ transitionDelay: `${index * 100}ms` }}
+    >
+      <div
+        className={`relative z-10 w-16 h-16 rounded-2xl bg-slate-800 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-5 transition-all duration-700 ${
+          visible
+            ? "opacity-100 translate-y-0 scale-100"
+            : "opacity-0 translate-y-4 scale-90"
+        }`}
+      >
+        {stat.icon}
+      </div>
+      <div className="text-4xl md:text-5xl font-black text-white tabular-nums">
+        {count.toLocaleString()}
+        {stat.suffix}
+      </div>
+      <div className="mt-2 text-xs md:text-sm font-bold uppercase tracking-widest text-slate-400 max-w-[160px]">
+        {stat.label}
+      </div>
+    </div>
+  );
+};
+
+const StatsSection = () => {
+  const [visible, setVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          obs.disconnect();
+        }
+      },
+      { threshold: 0.3 },
+    );
+    if (ref.current) obs.observe(ref.current);
+    return () => obs.disconnect();
+  }, []);
+
+  return (
+    <section ref={ref} className="relative bg-slate-900 py-20 overflow-hidden">
+      {/* subtle grid backdrop */}
+      <div
+        className="absolute inset-0 opacity-[0.07]"
+        style={{
+          backgroundImage:
+            "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)",
+          backgroundSize: "48px 48px",
+        }}
+      />
+      <div className="absolute top-0 left-0 w-72 h-72 bg-emerald-500/10 rounded-full blur-3xl -translate-x-1/3 -translate-y-1/3" />
+      <div className="absolute bottom-0 right-0 w-72 h-72 bg-amber-500/10 rounded-full blur-3xl translate-x-1/3 translate-y-1/3" />
+
+      <div className="relative max-w-7xl mx-auto px-4">
+        <div className="text-center mb-14">
+          <span className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 bg-white/5 border border-white/10 text-[10px] font-black uppercase tracking-widest text-emerald-400 mb-4">
+            Track Record
+          </span>
+          <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight">
+            Trusted By The Numbers
+          </h2>
+        </div>
+
+        <div className="relative">
+          {/* rigging cable connecting line */}
+          <svg
+            className="hidden md:block absolute top-8 left-0 w-full h-2 -z-0"
+            viewBox="0 0 1000 10"
+            preserveAspectRatio="none"
+          >
+            <line
+              x1="60"
+              y1="5"
+              x2="940"
+              y2="5"
+              stroke="#10b981"
+              strokeWidth="2"
+              strokeDasharray="880"
+              strokeDashoffset={visible ? 0 : 880}
+              style={{ transition: "stroke-dashoffset 1.8s ease-out" }}
+              opacity="0.4"
+            />
+          </svg>
+
+          <div className="relative z-10 grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-6">
+            {statsData.map((stat, i) => (
+              <StatItem key={i} stat={stat} visible={visible} index={i} />
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const faqData = [
+  {
+    icon: <Truck size={20} />,
+    q: "Do you deliver across Bangladesh?",
+    a: "Yes, we deliver nationwide. Most in-stock lifting and rigging equipment reaches Dhaka within 1–2 working days, and other districts within 3–5 working days depending on location.",
+  },
+  {
+    icon: <Boxes size={20} />,
+    q: "Do you offer bulk or wholesale pricing?",
+    a: "Yes. For bulk orders, project procurement, or recurring supply contracts, contact our sales team for a customized quote based on quantity and specification.",
+  },
+  {
+    icon: <ClipboardList size={20} />,
+    q: "Can you source products that aren't currently in stock?",
+    a: "Absolutely. Once you confirm a request, we source genuine products directly from our manufacturing partners and typically deliver within an estimated 15 working days.",
+  },
+  {
+    icon: <FileCheck2 size={20} />,
+    q: "Are your lifting and rigging products certified?",
+    a: "All chain hoists, slings, shackles, and rigging hardware we supply meet relevant industrial safety standards and come with manufacturer certification on request.",
+  },
+  {
+    icon: <Wrench size={20} />,
+    q: "Do you provide installation or technical support?",
+    a: "Yes, our team offers on-site installation guidance and technical consultation for lifting systems, along with after-sales support for maintenance and troubleshooting.",
+  },
+  {
+    icon: <Clock size={20} />,
+    q: "How long does order processing take?",
+    a: "In-stock orders are typically processed and dispatched within 24 hours of confirmation. Custom or bulk orders may take longer depending on sourcing requirements.",
+  },
+];
+
+const FAQItem = ({
+  item,
+  isOpen,
+  onClick,
+}: {
+  item: (typeof faqData)[0];
+  isOpen: boolean;
+  onClick: () => void;
+}) => {
+  return (
+    <div
+      className={`border rounded-2xl transition-colors ${
+        isOpen
+          ? "border-emerald-300 bg-emerald-50/40"
+          : "border-slate-200 bg-white hover:border-slate-300"
+      }`}
+    >
+      <button
+        onClick={onClick}
+        className="w-full flex items-center gap-4 text-left p-5 md:p-6"
+      >
+        <div
+          className={`w-10 h-10 shrink-0 rounded-xl flex items-center justify-center transition-all ${
+            isOpen ? "bg-emerald-500 text-white" : "bg-slate-100 text-slate-500"
+          }`}
+        >
+          {item.icon}
+        </div>
+        <span className="flex-1 font-black text-slate-900 text-sm md:text-base">
+          {item.q}
+        </span>
+        <ChevronRight
+          size={18}
+          className={`shrink-0 text-slate-400 transition-transform duration-300 ${
+            isOpen ? "rotate-90 text-emerald-600" : ""
+          }`}
+        />
+      </button>
+
+      <div
+        className="grid transition-[grid-template-rows] duration-300 ease-out"
+        style={{ gridTemplateRows: isOpen ? "1fr" : "0fr" }}
+      >
+        <div className="overflow-hidden">
+          <p className="px-5 md:px-6 pb-5 md:pb-6 pl-[76px] text-sm text-slate-600 leading-relaxed">
+            {item.a}
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const FAQSection = () => {
+  const [openIndex, setOpenIndex] = useState(0);
+
+  return (
+    <section className="py-20 bg-slate-50 border-t border-slate-100">
+      <div className="max-w-4xl mx-auto px-4">
+        <div className="text-center mb-12">
+          <span className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 bg-white border border-slate-200 text-[10px] font-black uppercase tracking-widest text-emerald-600 mb-4">
+            Support
+          </span>
+          <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight">
+            Frequently Asked Questions
+          </h2>
+          <p className="mt-4 text-slate-600 leading-relaxed">
+            Common questions about shipping, bulk orders, and custom
+            procurement.
+          </p>
+        </div>
+
+        <div className="space-y-3">
+          {faqData.map((item, i) => (
+            <FAQItem
+              key={i}
+              item={item}
+              isOpen={openIndex === i}
+              onClick={() => setOpenIndex(openIndex === i ? -1 : i)}
+            />
+          ))}
+        </div>
+
+        <div className="mt-10 text-center">
+          <p className="text-sm text-slate-500 mb-4">Still have questions?</p>
+          <Link to="/contact">
+            <Button variant="outline" className="rounded-full px-8">
+              Contact Our Team <ArrowRight className="ml-2" size={16} />
+            </Button>
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+};
 export const Home = () => {
   const [featured, setFeatured] = useState<Product[]>([]);
   const [deals, setDeals] = useState<Product[]>([]);
@@ -517,7 +797,7 @@ export const Home = () => {
           ))}
         </div>
       </div>
-
+      <StatsSection />
       {/* Industries We Serve */}
       <IndustriesWeServe />
 
@@ -641,6 +921,7 @@ export const Home = () => {
           <TestimonialCarousel testimonials={testimonials} />
         </div>
       </section>
+      <FAQSection />
     </Layout>
   );
 };
