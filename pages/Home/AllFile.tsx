@@ -335,34 +335,6 @@ export const AllFiles = () => {
                   {filteredProducts.length === 1 ? "" : "s"} found
                 </p>
               </div>
-
-              <div className="flex items-center gap-3">
-                <div className="flex items-center gap-0.5 border border-[#E7E3D8] rounded-full p-1 bg-white">
-                  <button className="p-1.5 rounded-full bg-[#F3F0E8] text-[#17362A]">
-                    <LayoutGrid size={16} />
-                  </button>
-                  <button className="p-1.5 rounded-full text-[#B9B4A8] hover:text-[#6B6558] transition-colors">
-                    <List size={16} />
-                  </button>
-                </div>
-
-                <div className="relative">
-                  <select
-                    className="appearance-none bg-white border border-[#E7E3D8] rounded-full pl-4 pr-9 py-2 text-[13px] font-medium text-[#17191C] outline-none focus:border-[#1F4D3A] transition-colors cursor-pointer"
-                    value={sortBy}
-                    onChange={(e) => setSortBy(e.target.value)}
-                  >
-                    <option value="newest">Newest First</option>
-                    <option value="price-low">Price: Low to High</option>
-                    <option value="price-high">Price: High to Low</option>
-                    <option value="popular">Most Popular</option>
-                  </select>
-                  <ChevronDown
-                    size={14}
-                    className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-[#8C8676]"
-                  />
-                </div>
-              </div>
             </div>
 
             {loading ? (
@@ -397,30 +369,6 @@ export const AllFiles = () => {
                 </Button>
               </div>
             )}
-
-            {/* Pagination */}
-            <div className="mt-14 flex items-center justify-center gap-1">
-              <button
-                className="p-2 rounded-full text-[#B9B4A8] disabled:opacity-30"
-                disabled
-              >
-                <ChevronLeft size={18} />
-              </button>
-
-              <button className="shop-mono w-9 h-9 rounded-full bg-[#1F4D3A] text-white text-[13px] font-medium">
-                1
-              </button>
-              <button className="shop-mono w-9 h-9 rounded-full text-[#6B6558] hover:bg-[#F3F0E8] transition-colors text-[13px] font-medium">
-                2
-              </button>
-              <button className="shop-mono w-9 h-9 rounded-full text-[#6B6558] hover:bg-[#F3F0E8] transition-colors text-[13px] font-medium">
-                3
-              </button>
-
-              <button className="p-2 rounded-full text-[#6B6558] hover:bg-[#F3F0E8] transition-colors">
-                <ChevronRight size={18} />
-              </button>
-            </div>
           </main>
 
           {/* Mobile filter drawer */}

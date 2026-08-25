@@ -387,12 +387,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({
                 </div>
               </div>
             </div>
-            <Link
-              to="/shop"
-              className="px-4 py-2 font-medium text-slate-700 hover:text-emerald-600 transition-colors"
-            >
-              All Products
-            </Link>
+
             <Link
               to="/clients"
               className="px-4 py-2 font-medium text-slate-700 hover:text-emerald-600 transition-colors"

@@ -750,8 +750,9 @@ export const Home = () => {
         title="Industrial Lifting & Rigging Equipment | Chain Hoists, Slings & Rigging Hardware in Bangladesh"
         description="Bangladesh's trusted supplier of certified lifting and rigging equipment — chain hoists, beam trolleys, wire ropes, slings, shackles and industrial hardware. Nationwide delivery, expert support, and custom procurement for factories, warehouses and shipyards."
       />
+      <AllFiles />
 
-      <Hero />
+      {/* <Hero /> */}
       {/* Trust Badges – Industrial / Engineering */}
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
@@ -831,7 +832,6 @@ export const Home = () => {
           </div>
         </div>
       </section>
-      <AllFiles />
 
       {/* Hot Deals */}
       <section className="py-8">
