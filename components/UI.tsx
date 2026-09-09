@@ -40,6 +40,7 @@ export const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
     product.images?.length > 0
       ? `${apiurl.imgUrl}${product.images[0].url}`
       : "/placeholder.png";
+  console.log(imageUrl);
   return (
     <div className="group relative bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
       <Link

@@ -15,11 +15,6 @@ import { ProductCard, Breadcrumbs, Button } from "../../components/UI";
 import { dataService } from "../../services/dataService";
 import { Product, Brand, CategoryNode } from "../../types";
 
-const FONT_STYLES = `
-  .shop-display { font-family: 'Fraunces', ui-serif, Georgia, serif; font-optical-sizing: auto; }
-  .shop-mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
-`;
-
 const collectSlugs = (node: CategoryNode): string[] => {
   const own = [node.slug];
   const kids = (node.children || []).flatMap(collectSlugs);
