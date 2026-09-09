@@ -28,7 +28,7 @@ export const SEO = ({
   description: string;
 }) => {
   useEffect(() => {
-    document.title = `${title} | tse`;
+    document.title = `${title} | isons`;
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) metaDesc.setAttribute("content", description);
   }, [title, description]);
@@ -198,12 +198,11 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({
               <Clock size={14} className="text-emerald-500" /> Sat–Thu 10AM–7PM
             </span>
             <span className="flex items-center text-lg gap-1.5 ">
-              <Phone size={18} className="text-emerald-500" />
-              +88 01714 169153
+              <Phone size={18} className="text-emerald-500" /> +880 1810-050001
             </span>
             <span className="flex text-lg items-center gap-1.5">
               <Mail size={18} className="text-emerald-500" />{" "}
-              techsolutionsengineers@gmail.com
+              shaid.ctg1993@gmail.com
             </span>
           </div>
           <div className="flex text-lg gap-4">
@@ -216,7 +215,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({
               <MessageCircle size={18} />
             </a>
             <a
-              href="https://www.facebook.com/TSEengineers"
+              href="https://www.facebook.com/isonsengineers"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-full flex items-center justify-center bg-green-500 text-white transition-all"
@@ -462,7 +461,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({
         <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           <div className="space-y-6">
             <Link to="/" className="text-2xl font-bold text-white">
-              <span className="text-emerald-500"> About TSE</span>
+              <span className="text-emerald-500"> About isons</span>
             </Link>
             <p className="text-sm leading-relaxed text-slate-400">
               Techsolution & Engineers is considered to be masters in Automation
@@ -480,7 +479,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({
                 <MessageCircle size={18} />
               </a>
               <a
-                href="https://www.facebook.com/TSEengineers"
+                href="https://www.facebook.com/isonsengineers"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-emerald-600 hover:text-white transition-all"
@@ -581,7 +580,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({
         </div>
 
         <div className="max-w-7xl mx-auto px-4 pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
-          <p>© 2026 TSE. All rights reserved.</p>
+          <p>© 2026 isons. All rights reserved.</p>
           <div className="flex gap-4">
             <span className="bg-slate-800 px-3 py-1 rounded">SSL Secure</span>
             <span className="bg-slate-800 px-3 py-1 rounded">

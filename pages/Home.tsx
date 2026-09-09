@@ -35,173 +35,18 @@ import {
   ChevronLeft,
   ChevronRight,
   Quote,
-  Fuel,
-  Droplet,
-  Leaf,
-  Sun,
-  Wind,
-  GlassWaterIcon,
   Truck,
   Headphones,
-  Ship,
-  Warehouse,
-  Pickaxe,
-  ShipWheel,
   HardHat,
-  Anchor,
   Boxes,
-  Container,
-  Train,
 } from "lucide-react";
 import { SEO, Layout } from "../components/Layout";
 import { ProductCard, Button } from "../components/UI";
 import { dataService } from "../services/dataService";
 import { Product, Category, Brand, Testimonial } from "../types";
-import { images } from "@/public/image/Images";
 import IndustriesWeServe from "./Home/IndustriesweServe";
 import { AllFiles } from "./Home/AllFile";
 
-const Hero = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const slides = [
-    {
-      tag: "Lifting Equipment",
-      title: "Professional Lifting Solutions for Every Industry",
-      subtitle:
-        "Premium chain hoists, beam trolleys, wire ropes, slings and lifting equipment engineered for safe and reliable material handling.",
-      cta: "Shop Products",
-      link: "/shop",
-      bg: "bg-slate-950",
-      overlay:
-        "bg-gradient-to-r from-slate-950/90 via-slate-900/70 to-transparent",
-      img: images.slider1,
-      imgClass: "object-cover opacity-40",
-      text: "text-white",
-      btnVariant: "secondary" as const,
-    },
-    {
-      tag: "Rigging Equipment",
-      title: "Trusted Rigging Hardware Built for Heavy-Duty Performance",
-      subtitle:
-        "High-quality shackles, hooks, chains, clamps, turnbuckles and rigging accessories designed for maximum safety and long service life.",
-      cta: "Browse Categories",
-      link: "/shop",
-      bg: "bg-slate-900",
-      overlay:
-        "bg-gradient-to-r from-slate-950/85 via-slate-900/60 to-transparent",
-      img: images.slider2,
-      imgClass: "object-cover opacity-45",
-      text: "text-white",
-      btnVariant: "secondary" as const,
-    },
-    {
-      tag: "Industrial Supply",
-      title: "Your Complete Industrial Lifting & Material Handling Partner",
-      subtitle:
-        "From warehouses and construction sites to factories and shipyards—we deliver certified lifting, rigging and cargo handling solutions across Bangladesh.",
-      cta: "Request a Quote",
-      link: "/contact",
-      bg: "bg-slate-900",
-      overlay:
-        "bg-gradient-to-r from-slate-950/90 via-slate-900/65 to-transparent",
-      img: images.slider3,
-      imgClass: "object-cover opacity-40",
-      text: "text-white",
-      btnVariant: "secondary" as const,
-    },
-  ];
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((s) => (s + 1) % slides.length);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, []);
-
-  return (
-    <section className="relative mx-4 mt-4 overflow-hidden rounded-2xl sm:rounded-3xl border border-slate-200 shadow-xl h-[360px] sm:h-[420px] md:h-[520px]">
-      {slides.map((slide, idx) => (
-        <div
-          key={idx}
-          className={`absolute inset-0 flex items-center transition-opacity duration-1000 ${
-            slide.bg
-          } ${idx === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0"}`}
-        >
-          <img
-            src={slide.img}
-            alt=""
-            className={`absolute inset-0 object-cover ${slide.imgClass}`}
-          />
-          <div className={`absolute inset-0 ${slide.overlay}`} />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/35 via-slate-900/10 to-transparent" />{" "}
-          {slide.text === "text-white" && (
-            <div className="absolute inset-0 bg-gradient-to-r from-slate-900/75 via-slate-900/45 to-transparent" />
-          )}
-          <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-12">
-            <div
-              className={`max-w-2xl space-y-3 sm:space-y-4 md:space-y-6 ${slide.text}`}
-            >
-              <span
-                className={`inline-flex items-center gap-2 rounded-full px-3 py-1.5 sm:px-4 sm:py-2 text-[10px] sm:text-xs font-black uppercase tracking-widest ${
-                  slide.text === "text-white"
-                    ? "bg-white/10 text-white border border-white/15"
-                    : "bg-slate-900 text-white"
-                }`}
-              >
-                {slide.tag}
-              </span>
-
-              <h1 className="text-2xl sm:text-4xl md:text-6xl font-black leading-tight">
-                {slide.title}
-              </h1>
-
-              <p className="max-w-xl text-sm sm:text-lg md:text-xl opacity-90 font-medium leading-relaxed">
-                {slide.subtitle}
-              </p>
-
-              <div className="pt-1 flex flex-col sm:flex-row gap-3 sm:items-center">
-                <Link to={slide.link} className="w-full sm:w-auto">
-                  <Button
-                    variant={slide.btnVariant}
-                    className="w-full sm:w-auto rounded-full px-6 sm:px-8 py-3 text-sm sm:text-lg"
-                  >
-                    {slide.cta} <ArrowRight className="ml-2" size={18} />
-                  </Button>
-                </Link>
-
-                <Link to="/contact" className="w-full sm:w-auto">
-                  <Button
-                    variant="outline"
-                    className={`w-full sm:w-auto rounded-full px-6 sm:px-8 py-3 text-sm sm:text-lg ${
-                      slide.text === "text-white"
-                        ? "border-white/40 text-white hover:bg-white/10"
-                        : ""
-                    }`}
-                  >
-                    Contact Sales
-                  </Button>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      ))}
-
-      <div className="absolute bottom-4 sm:bottom-6 left-1/2 z-20 flex -translate-x-1/2 gap-2">
-        {slides.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setCurrentSlide(i)}
-            className={`h-2 rounded-full transition-all duration-300 ${
-              i === currentSlide ? "w-8 bg-emerald-500" : "w-2 bg-slate-300"
-            }`}
-            aria-label={`Go to slide ${i + 1}`}
-          />
-        ))}
-      </div>
-    </section>
-  );
-};
 const TestimonialCarousel = ({
   testimonials,
 }: {

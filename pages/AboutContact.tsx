@@ -4,31 +4,30 @@ import {
   MapPin,
   Phone,
   Mail,
-  Globe,
   CheckCircle2,
-  Factory,
+  Anchor,
   Wrench,
   ShieldCheck,
-  Cpu,
+  Boxes,
   Gauge,
-  Settings,
+  Truck,
   Building2,
   BadgeCheck,
   Clock,
-  FileText,
+  PackageCheck,
 } from "lucide-react";
 import { SEO, Layout } from "../components/Layout";
 import { Button } from "../components/UI";
 import toast from "react-hot-toast";
 
-/* ----------------------------- ABOUT (BTech-style) ----------------------------- */
+/* ----------------------------- ABOUT ----------------------------- */
 
 export const About = () => {
   const stats = useMemo(
     () => [
-      { label: "Projects Delivered", value: "300+", tone: "text-emerald-600" },
+      { label: "Projects Supplied", value: "300+", tone: "text-emerald-600" },
       { label: "Industry Segments", value: "10+", tone: "text-indigo-600" },
-      { label: "Service Response", value: "24–48h", tone: "text-amber-600" },
+      { label: "Order Turnaround", value: "24–48h", tone: "text-amber-600" },
     ],
     [],
   );
@@ -37,23 +36,23 @@ export const About = () => {
     () => [
       {
         icon: <ShieldCheck className="text-emerald-700" />,
-        title: "Quality & Reliability",
-        desc: "Genuine parts, proper engineering practice, and clear documentation—no shortcuts.",
+        title: "Quality & Safety",
+        desc: "Certified lifting and rigging gear, rated and tested to spec—no shortcuts on safety.",
       },
       {
-        icon: <Cpu className="text-indigo-700" />,
-        title: "Automation Expertise",
-        desc: "PLC, HMI, VFD, servo & control integration—designed for stable operations.",
+        icon: <Boxes className="text-indigo-700" />,
+        title: "Wide Inventory",
+        desc: "Chain hoists, wire rope, slings, shackles and rigging hardware ready to ship.",
       },
       {
         icon: <Wrench className="text-amber-700" />,
-        title: "Service & Support",
-        desc: "Troubleshooting, maintenance, and on-site support with practical solutions.",
+        title: "Technical Support",
+        desc: "Load calculations, product selection, and on-site guidance from an experienced team.",
       },
       {
         icon: <BadgeCheck className="text-slate-700" />,
         title: "Trust & Transparency",
-        desc: "Accurate specs, clear scope, and honest recommendations to protect your ROI.",
+        desc: "Accurate specs, clear pricing, and honest recommendations to protect your project.",
       },
     ],
     [],
@@ -62,24 +61,24 @@ export const About = () => {
   const services = useMemo(
     () => [
       {
-        icon: <Settings className="text-emerald-700" />,
-        title: "Industrial Automation",
-        desc: "PLC programming, panel design, system integration & commissioning.",
+        icon: <Anchor className="text-emerald-700" />,
+        title: "Chain Hoists & Blocks",
+        desc: "Manual and electric chain hoists, lever blocks, and lifting tackle for every load class.",
       },
       {
         icon: <Gauge className="text-indigo-700" />,
-        title: "Drives & Motion",
-        desc: "VFD, inverter, servo selection, setup, tuning & optimization.",
+        title: "Wire Rope & Slings",
+        desc: "Wire rope, wire rope slings, webbing slings and round slings built to rated capacity.",
       },
       {
-        icon: <Factory className="text-amber-700" />,
-        title: "Plant Solutions",
-        desc: "Electrical distribution, SDB, control panels, retrofit & upgrades.",
+        icon: <PackageCheck className="text-amber-700" />,
+        title: "Rigging Hardware",
+        desc: "Shackles, turnbuckles, eye bolts, lifting chains, hooks and rigging accessories.",
       },
       {
-        icon: <FileText className="text-slate-700" />,
-        title: "Maintenance & Repair",
-        desc: "Preventive maintenance, fault diagnosis, component repair & replacement.",
+        icon: <Truck className="text-slate-700" />,
+        title: "Supply & Logistics",
+        desc: "Sourcing, stock supply, and timely delivery for projects across all industries.",
       },
     ],
     [],
@@ -87,14 +86,14 @@ export const About = () => {
 
   const industries = useMemo(
     () => [
-      "Pharmaceutical",
-      "Textile & Garments",
+      "Construction",
+      "Shipping & Ports",
+      "Oil & Gas",
       "Steel & Metal",
-      "Food & Beverage",
-      "Packaging",
-      "Power & Utilities",
-      "Cement",
-      "Printing",
+      "Power & Energy",
+      "Manufacturing",
+      "Marine",
+      "Logistics",
     ],
     [],
   );
@@ -103,7 +102,7 @@ export const About = () => {
     <Layout>
       <SEO
         title="About Us"
-        description="Industrial automation & engineering solutions—mission, vision, services and industries we support."
+        description="N Islam Trade International—trusted supplier of lifting and rigging equipment for projects across all industries."
       />
 
       {/* Hero */}
@@ -115,25 +114,26 @@ export const About = () => {
         <div className="relative max-w-7xl mx-auto px-4 pt-20 pb-14">
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900 text-white text-sm font-bold">
-              <Building2 size={16} />
-              Industrial Automation & Engineering
+              <Building2 size={16} />N Islam Trade International
             </div>
 
             <h1 className="mt-6 text-5xl md:text-6xl font-black text-slate-900 leading-tight">
-              Engineering that{" "}
-              <span className="text-emerald-600">keeps plants running</span>
+              Your trusted partner in{" "}
+              <span className="text-emerald-600">
+                lifting & rigging equipment
+              </span>
             </h1>
 
             <p className="mt-6 text-lg md:text-xl text-slate-600 leading-relaxed">
-              We deliver automation, electrical and control solutions with a
-              focus on uptime, safety, and long-term reliability—so your
-              operation stays stable and scalable.
+              We supply professional, safe, efficient and reliable lifting and
+              rigging equipment for projects of every scale—backed by expertise
+              you can trust.
             </p>
 
             <div className="mt-10 flex flex-col sm:flex-row gap-3 justify-center">
               <Button className="px-7 py-4 rounded-2xl">Request a Quote</Button>
               <Button variant="outline" className="px-7 py-4 rounded-2xl">
-                View Services
+                View Products
               </Button>
             </div>
           </div>
@@ -145,8 +145,8 @@ export const About = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-6">
             <img
-              src="https://picsum.photos/seed/automation/1200/900"
-              alt="Industrial Automation"
+              src="https://picsum.photos/seed/rigging/1200/900"
+              alt="Lifting and Rigging Equipment"
               className="rounded-3xl shadow-2xl border border-slate-200"
             />
           </div>
@@ -157,10 +157,10 @@ export const About = () => {
                 Who We Are
               </h2>
               <p className="mt-4 text-slate-600 leading-relaxed">
-                We are an engineering-focused team providing industrial
-                automation, control systems, and electrical solutions. Our
-                approach is simple: understand the plant requirements, design
-                clean solutions, and support you after delivery.
+                N Islam Trade International is a pioneer and trusted source for
+                lifting and rigging equipment. We work closely with our
+                customers to understand project requirements, supply the right
+                equipment, and stand behind it after delivery.
               </p>
             </div>
 
@@ -187,16 +187,16 @@ export const About = () => {
               </h4>
               <ul className="mt-3 space-y-2 text-slate-600">
                 <li className="flex gap-2">
-                  <span className="mt-1 text-emerald-600">•</span>Reduced
-                  downtime and stable operations
+                  <span className="mt-1 text-emerald-600">•</span>Certified,
+                  rated equipment for safe lifting operations
                 </li>
                 <li className="flex gap-2">
-                  <span className="mt-1 text-emerald-600">•</span>Safer control
-                  systems and clean wiring standards
+                  <span className="mt-1 text-emerald-600">•</span>Reliable stock
+                  and fast turnaround on orders
                 </li>
                 <li className="flex gap-2">
-                  <span className="mt-1 text-emerald-600">•</span>Maintainable
-                  solutions with proper documentation
+                  <span className="mt-1 text-emerald-600">•</span>Honest
+                  guidance so you get the right equipment the first time
                 </li>
               </ul>
             </div>
@@ -215,23 +215,23 @@ export const About = () => {
               <h3 className="text-2xl font-black text-slate-900">Vision</h3>
             </div>
             <p className="mt-4 text-slate-600 leading-relaxed">
-              To be a trusted automation and engineering partner in
-              Bangladesh—recognized for reliability, innovation, and strong
-              service culture.
+              To be the most trusted name in lifting and rigging equipment
+              supply—recognized for reliability, safety, and strong customer
+              service.
             </p>
           </div>
 
           <div className="p-8 md:p-10 rounded-3xl bg-white border border-slate-200 shadow-xl shadow-slate-200/40">
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 rounded-2xl bg-amber-50 text-amber-700 flex items-center justify-center">
-                <Factory />
+                <Anchor />
               </div>
               <h3 className="text-2xl font-black text-slate-900">Mission</h3>
             </div>
             <p className="mt-4 text-slate-600 leading-relaxed">
-              Deliver robust automation, control and electrical solutions with
-              quality components, proper engineering, and responsive
-              support—ensuring uptime and operational efficiency.
+              Supply professional, safe and reliable lifting and rigging
+              equipment with quality components and responsive
+              support—protecting your project and your people.
             </p>
           </div>
         </div>
@@ -241,11 +241,11 @@ export const About = () => {
       <section className="max-w-7xl mx-auto px-4 py-16">
         <div className="max-w-3xl">
           <h2 className="text-3xl md:text-4xl font-black text-slate-900">
-            Core Services
+            What We Supply
           </h2>
           <p className="mt-3 text-slate-600">
-            End-to-end support—from design and integration to commissioning and
-            maintenance.
+            From single components to full project packages—sourced, checked,
+            and delivered on time.
           </p>
         </div>
 
@@ -280,8 +280,8 @@ export const About = () => {
             Why Choose Us
           </h2>
           <p className="mt-3 text-slate-600">
-            We focus on engineering clarity, long-term reliability, and strong
-            after-sales support.
+            We focus on safety, dependable stock, and honest support on every
+            order.
           </p>
         </div>
 
@@ -316,8 +316,8 @@ export const About = () => {
             Industries We Serve
           </h2>
           <p className="mt-3 text-slate-600">
-            We work across multiple sectors where uptime, safety and efficiency
-            matter.
+            We supply lifting and rigging equipment across sectors where safety
+            and reliability matter most.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
@@ -336,7 +336,7 @@ export const About = () => {
   );
 };
 
-/* ----------------------------- CONTACT (BTech-style) ----------------------------- */
+/* ----------------------------- CONTACT ----------------------------- */
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
@@ -360,49 +360,13 @@ export const Contact = () => {
   };
   const [submitted, setSubmitted] = useState(false);
 
-  // const handleSubmit = async (e: React.FormEvent) => {
-  //   e.preventDefault();
-
-  //   try {
-  //     const res = await fetch(
-  //       "https://formsubmit.co/ajax/techsolutionsengineers@gmail.com",
-  //       {
-  //         method: "POST",
-  //         headers: {
-  //           "Content-Type": "application/json",
-  //           Accept: "application/json",
-  //         },
-  //         body: JSON.stringify({
-  //           name: formData.name,
-  //           email: formData.email,
-  //           phone: formData.phone,
-  //           service: formData.service,
-  //           subject: formData.subject,
-  //           message: formData.message,
-  //           _subject: `New Contact: ${formData.subject}`,
-  //           _captcha: "false",
-  //         }),
-  //       },
-  //     );
-
-  //     const data = await res.json();
-
-  //     if (data.success === "true" || data.success === true) {
-  //       toast.success("Message sent successfully ✅");
-  //       setSubmitted(true);
-  //     } else {
-  //       toast.error("Failed to send message ❌");
-  //     }
-  //   } catch (err) {
-  //     alert("Something went wrong");
-  //   }
-  // };
+  // TODO: replace with your form endpoint / email
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     try {
       const res = await fetch(
-        "https://formsubmit.co/ajax/techsolutionsengineers@gmail.com",
+        "https://formsubmit.co/ajax/YOUR_EMAIL_HERE@example.com",
         {
           method: "POST",
           headers: {
@@ -437,7 +401,7 @@ export const Contact = () => {
     <Layout>
       <SEO
         title="Contact Us"
-        description="Contact for automation solutions, service support, and quotations."
+        description="Contact N Islam Trade International for lifting and rigging equipment, quotations, and project support."
       />
 
       <div className="max-w-7xl mx-auto px-4 py-16">
@@ -447,8 +411,8 @@ export const Contact = () => {
             <div>
               <h1 className="text-4xl font-black text-slate-900">Contact</h1>
               <p className="mt-3 text-slate-600">
-                For quotation, project discussion, on-site support, or spare
-                parts—reach out anytime.
+                For quotation, product availability, or project support—reach
+                out anytime.
               </p>
             </div>
 
@@ -459,9 +423,9 @@ export const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-black text-slate-900">Office</h4>
+                  {/* TODO: replace with your real office address */}
                   <p className="text-sm text-slate-600">
-                    P# 293, Jamtola Mor, Shadhinota Sarani Road, North Badda,
-                    Dhaka-1212
+                    [Your office address here]
                   </p>
                 </div>
               </div>
@@ -472,7 +436,8 @@ export const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-black text-slate-900">Phone</h4>
-                  <p className="text-sm text-slate-600">+88 01714 169153</p>
+                  {/* TODO: replace with your real phone number */}
+                  <p className="text-sm text-slate-600">[Your phone number]</p>
                 </div>
               </div>
 
@@ -482,9 +447,8 @@ export const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-black text-slate-900">Email</h4>
-                  <p className="text-sm text-slate-600">
-                    techsolutionsengineers@gmail.com{" "}
-                  </p>
+                  {/* TODO: replace with your real email address */}
+                  <p className="text-sm text-slate-600">[Your email address]</p>
                 </div>
               </div>
 
@@ -494,6 +458,7 @@ export const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-black text-slate-900">Business Hours</h4>
+                  {/* TODO: confirm your business hours */}
                   <p className="text-sm text-slate-600">
                     Sat–Thu: 10:00 AM – 7:00 PM <br />
                     Friday: Closed / On Call
@@ -505,8 +470,8 @@ export const Contact = () => {
             <div className="p-6 rounded-3xl bg-slate-50 border border-slate-200">
               <h4 className="font-black text-slate-900">For faster response</h4>
               <p className="mt-2 text-sm text-slate-600">
-                Please mention: project location, required service
-                (PLC/HMI/VFD/Panel), and urgency level.
+                Please mention: project location, required equipment (hoist /
+                wire rope / sling / shackle), and required load capacity.
               </p>
             </div>
           </div>
@@ -581,7 +546,7 @@ export const Contact = () => {
                     </div>
                     <div className="space-y-2">
                       <label className="text-sm font-black text-slate-700">
-                        Service Type
+                        Equipment Type
                       </label>
                       <select
                         required
@@ -592,13 +557,13 @@ export const Contact = () => {
                         onChange={handleChange}
                       >
                         <option value="" disabled>
-                          Select a service
+                          Select equipment type
                         </option>
-                        <option>PLC / HMI Programming</option>
-                        <option>VFD / Inverter Setup</option>
-                        <option>Servo & Motion</option>
-                        <option>Control Panel / SDB</option>
-                        <option>Maintenance / Repair</option>
+                        <option>Chain Hoist / Block</option>
+                        <option>Wire Rope / Sling</option>
+                        <option>Shackle / Rigging Hardware</option>
+                        <option>Lifting Chain</option>
+                        <option>Bulk / Project Supply</option>
                         <option>Other</option>
                       </select>
                     </div>
@@ -611,7 +576,7 @@ export const Contact = () => {
                     <input
                       required
                       className="w-full px-4 py-3 rounded-2xl border border-slate-200 outline-none focus:border-emerald-500 transition-colors"
-                      placeholder="Project / quotation / support"
+                      placeholder="Quotation / stock inquiry / support"
                       value={formData.subject}
                       name="subject"
                       onChange={handleChange}
@@ -629,7 +594,7 @@ export const Contact = () => {
                       name="message"
                       rows={5}
                       className="w-full px-4 py-3 rounded-2xl border border-slate-200 outline-none focus:border-emerald-500 transition-colors"
-                      placeholder="Write details (location, machine type, requirements, timeline)..."
+                      placeholder="Write details (equipment type, load capacity, quantity, timeline)..."
                     />
                   </div>
 
@@ -644,13 +609,14 @@ export const Contact = () => {
             </div>
 
             {/* Map */}
+            {/* TODO: update the map query with your real address */}
             <div className="mt-12 w-full h-80 rounded-3xl overflow-hidden border border-slate-200 bg-slate-100">
               <iframe
                 title="Google Map"
                 className="w-full h-full"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                src="https://www.google.com/maps?q=293,Jamtola Mor,Shadhinota Sarani Road,Uttar Badda,Dhaka-1212&output=embed"
+                src="https://www.google.com/maps?q=Dhaka,Bangladesh&output=embed"
               />
             </div>
           </div>

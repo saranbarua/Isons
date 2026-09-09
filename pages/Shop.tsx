@@ -156,10 +156,10 @@ export const Shop = () => {
   const [loading, setLoading] = useState(true);
   const [isFilterOpen, setIsFilterOpen] = useState(false);
 
-  const [selectedCat, setSelectedCat] = useState(
+  const [selectedCat, seisonslectedCat] = useState(
     searchParams.get("category") || "All",
   );
-  const [selectedBrand, setSelectedBrand] = useState("All");
+  const [selectedBrand, seisonslectedBrand] = useState("All");
   const [sortBy, setSortBy] = useState("newest");
 
   const autoOpenAncestors = (
@@ -179,7 +179,7 @@ export const Shop = () => {
   // Call inside your URL sync useEffect:
   useEffect(() => {
     const catFromUrl = searchParams.get("category") || "All";
-    setSelectedCat(catFromUrl);
+    seisonslectedCat(catFromUrl);
     if (catFromUrl !== "All") {
       setOpenNodes((prev) => {
         const next = new Set(prev);
@@ -272,7 +272,7 @@ export const Shop = () => {
                 </h4>
 
                 <button
-                  onClick={() => setSelectedCat("All")}
+                  onClick={() => seisonslectedCat("All")}
                   className={`block w-full text-left text-sm py-1.5 rounded-lg px-2 transition-colors
                     ${selectedCat === "All" ? "text-emerald-700 font-bold bg-emerald-50" : "text-slate-600 hover:text-emerald-600 hover:bg-slate-50"}`}
                 >
@@ -283,7 +283,7 @@ export const Shop = () => {
                   <CategoryTreeButtons
                     nodes={categories}
                     selectedSlug={selectedCat}
-                    onSelect={(slug) => setSelectedCat(slug)}
+                    onSelect={(slug) => seisonslectedCat(slug)}
                     openNodes={openNodes}
                     setOpenNodes={setOpenNodes}
                   />
@@ -361,8 +361,8 @@ export const Shop = () => {
                 <Button
                   variant="outline"
                   onClick={() => {
-                    setSelectedCat("All");
-                    setSelectedBrand("All");
+                    seisonslectedCat("All");
+                    seisonslectedBrand("All");
                   }}
                 >
                   Reset All Filters
@@ -418,7 +418,7 @@ export const Shop = () => {
               <div className="p-4 overflow-y-auto h-[calc(100%-64px)]">
                 <button
                   onClick={() => {
-                    setSelectedCat("All");
+                    seisonslectedCat("All");
                     setIsFilterOpen(false);
                   }}
                   className={`block w-full text-left text-sm py-2 rounded-lg px-2 transition-colors ${
@@ -435,7 +435,7 @@ export const Shop = () => {
                     nodes={categories}
                     selectedSlug={selectedCat}
                     onSelect={(slug) => {
-                      setSelectedCat(slug);
+                      seisonslectedCat(slug);
                       setIsFilterOpen(false);
                     }}
                     openNodes={openNodes}

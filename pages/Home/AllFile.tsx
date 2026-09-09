@@ -168,10 +168,10 @@ export const AllFiles = () => {
   const [loading, setLoading] = useState(true);
   const [isFilterOpen, setIsFilterOpen] = useState(false);
 
-  const [selectedCat, setSelectedCat] = useState(
+  const [selectedCat, seisonslectedCat] = useState(
     searchParams.get("category") || "All",
   );
-  const [selectedBrand, setSelectedBrand] = useState("All");
+  const [selectedBrand, seisonslectedBrand] = useState("All");
   const [sortBy, setSortBy] = useState("newest");
 
   const autoOpenAncestors = (
@@ -190,7 +190,7 @@ export const AllFiles = () => {
 
   useEffect(() => {
     const catFromUrl = searchParams.get("category") || "All";
-    setSelectedCat(catFromUrl);
+    seisonslectedCat(catFromUrl);
     if (catFromUrl !== "All") {
       setOpenNodes((prev) => {
         const next = new Set(prev);
@@ -273,7 +273,7 @@ export const AllFiles = () => {
               <div>
                 <div className="relative mt-1">
                   <div
-                    onClick={() => setSelectedCat("All")}
+                    onClick={() => seisonslectedCat("All")}
                     className={`group relative flex items-center py-2 pl-2 cursor-pointer text-[13.5px] transition-colors ${
                       selectedCat === "All"
                         ? "text-[#17362A] font-semibold"
@@ -293,7 +293,7 @@ export const AllFiles = () => {
                   <CategoryTreeButtons
                     nodes={categories}
                     selectedSlug={selectedCat}
-                    onSelect={(slug) => setSelectedCat(slug)}
+                    onSelect={(slug) => seisonslectedCat(slug)}
                     openNodes={openNodes}
                     setOpenNodes={setOpenNodes}
                   />
@@ -356,8 +356,8 @@ export const AllFiles = () => {
                   variant="outline"
                   className="rounded-full border-[#1F4D3A] text-[#1F4D3A] hover:bg-[#1F4D3A] hover:text-white"
                   onClick={() => {
-                    setSelectedCat("All");
-                    setSelectedBrand("All");
+                    seisonslectedCat("All");
+                    seisonslectedBrand("All");
                   }}
                 >
                   Reset All Filters
@@ -397,7 +397,7 @@ export const AllFiles = () => {
               <div className="p-5 overflow-y-auto h-[calc(100%-72px)]">
                 <div
                   onClick={() => {
-                    setSelectedCat("All");
+                    seisonslectedCat("All");
                     setIsFilterOpen(false);
                   }}
                   className={`relative flex items-center py-2 pl-2 cursor-pointer text-sm transition-colors ${
@@ -419,7 +419,7 @@ export const AllFiles = () => {
                     nodes={categories}
                     selectedSlug={selectedCat}
                     onSelect={(slug) => {
-                      setSelectedCat(slug);
+                      seisonslectedCat(slug);
                       setIsFilterOpen(false);
                     }}
                     openNodes={openNodes}

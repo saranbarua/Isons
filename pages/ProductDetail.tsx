@@ -59,51 +59,6 @@ const ProductDetailsSkeleton = () => {
     </div>
   );
 };
-// const SpecPill = ({ k, v }: { k: string; v: string }) => (
-//   <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1.5 shadow-sm">
-//     <span className="text-[11px] font-semibold text-slate-500">{k}</span>
-//     <span className="text-[11px] font-bold text-slate-900">{v}</span>
-//   </div>
-// );
-const SpecPill = ({
-  label,
-  value,
-  accent = false,
-}: {
-  label: string;
-  value: string;
-  accent?: boolean;
-}) => (
-  <div
-    className={`rounded-xl p-3 border transition-colors ${
-      accent
-        ? "bg-emerald-50 border-emerald-200"
-        : "bg-slate-50 border-slate-200 hover:border-slate-300"
-    }`}
-  >
-    <p
-      className={`text-[10px] font-semibold uppercase tracking-wide mb-1 ${
-        accent ? "text-emerald-700" : "text-slate-400"
-      }`}
-    >
-      {label}
-    </p>
-    <p
-      className={`text-[13px] font-semibold leading-snug ${
-        accent ? "text-emerald-900" : "text-slate-800"
-      }`}
-    >
-      {value}
-    </p>
-  </div>
-);
-
-const Bullet = ({ text }: { text: string }) => (
-  <li className="flex gap-2.5">
-    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-500" />
-    <span className="text-sm text-slate-700 leading-relaxed">{text}</span>
-  </li>
-);
 
 const ZoomModal = ({
   open,
@@ -192,16 +147,6 @@ const Thumbs = ({
         {images.map((src, i) => {
           const isActive = i === active;
           return (
-            // <button
-            //   key={src + i}
-            //   onClick={() => onPick(i)}
-            //   className={`shrink-0 w-16 h-16 rounded-xl overflow-hidden border transition
-            //     ${isActive ? "border-emerald-600 ring-2 ring-emerald-600/15" : "border-slate-200 hover:border-slate-300"}`}
-            //   type="button"
-            //   aria-label={`Thumbnail ${i + 1}`}
-            // >
-            //   <img src={src} alt="" className="w-full h-full object-cover" />
-            // </button>
             <motion.button
               whileTap={{ scale: 0.96 }}
               key={src + i}
@@ -509,9 +454,9 @@ export const ProductDetail = () => {
               </div>
 
               {/* Description body */}
-              <div className="p-4">
+              <div className="p-4 min-w-0">
                 {product.description ? (
-                  <div>
+                  <div className="min-w-0">
                     {product.description.split("\n").map((line, i) => {
                       const trimmed = line.trim();
 
@@ -519,7 +464,7 @@ export const ProductDetail = () => {
                         return (
                           <p
                             key={i}
-                            className="text-[10px] uppercase tracking-[0.14em] text-slate-400 font-medium mt-4 mb-2 first:mt-0"
+                            className="text-[10px] uppercase tracking-[0.14em] text-slate-400 font-medium mt-4 mb-2 first:mt-0 break-words [overflow-wrap:anywhere]"
                           >
                             {trimmed.slice(0, -1)}
                           </p>
@@ -537,10 +482,10 @@ export const ProductDetail = () => {
                         return (
                           <div
                             key={i}
-                            className="flex items-start gap-2.5 py-1.5 border-b border-slate-50 last:border-0"
+                            className="flex items-start gap-2.5 py-1.5 border-b border-slate-50 last:border-0 min-w-0"
                           >
                             <span className="mt-[6px] h-[5px] w-[5px] shrink-0 rounded-full bg-emerald-400 opacity-80" />
-                            <span className="text-[13px] text-slate-600 leading-snug">
+                            <span className="text-[13px] text-slate-600 leading-snug min-w-0 break-words [overflow-wrap:anywhere]">
                               {text}
                             </span>
                           </div>
@@ -552,7 +497,7 @@ export const ProductDetail = () => {
                       return (
                         <p
                           key={i}
-                          className="text-[13px] text-slate-600 leading-relaxed"
+                          className="text-[13px] text-justify text-slate-600 leading-relaxed break-words [overflow-wrap:anywhere]"
                         >
                           {trimmed}
                         </p>
